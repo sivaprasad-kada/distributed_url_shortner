@@ -127,13 +127,13 @@ const HeroSection = () => {
             >
               {/* Input row */}
               <div
-                className="flex items-center gap-2 p-1.5 rounded-2xl w-full bg-white dark:bg-slate-950 border border-blue-500/15 dark:border-slate-800"
+                className="flex items-center gap-1 sm:gap-2 p-1 sm:p-1.5 rounded-2xl w-full bg-white dark:bg-slate-950 border border-blue-500/15 dark:border-slate-800"
                 style={{
                   boxShadow: "0 2px 20px rgba(37,99,235,0.07), 0 1px 3px rgba(0,0,0,0.05)",
                 }}
               >
-                <div className="flex items-center gap-2.5 flex-1 pl-4">
-                  <Link2 size={17} className="text-slate-400 dark:text-slate-500 shrink-0" />
+                <div className="flex items-center gap-1.5 sm:gap-2.5 flex-1 pl-2 sm:pl-4 min-w-0">
+                  <Link2 className="text-slate-400 dark:text-slate-500 shrink-0 w-3.5 h-3.5 sm:w-[17px] sm:h-[17px]" />
                   <input
                     ref={inputRef}
                     type="url"
@@ -141,13 +141,13 @@ const HeroSection = () => {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleShorten()}
-                    className="flex-1 bg-transparent outline-none text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500"
+                    className="flex-1 bg-transparent outline-none text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 min-w-0"
                   />
                 </div>
                 <button
                   onClick={handleShorten}
                   disabled={isLoading}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 disabled:opacity-70"
+                  className="flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white transition-all duration-200 disabled:opacity-70 shrink-0"
                   style={{
                     background: "linear-gradient(135deg, #2563EB 0%, #3b82f6 100%)",
                     boxShadow: "0 2px 12px rgba(37,99,235,0.35)",
@@ -164,11 +164,11 @@ const HeroSection = () => {
                   }}
                 >
                   {isLoading ? (
-                    <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                    <span className="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      Shorten URL
-                      <ArrowRight size={15} />
+                      Shorten<span className="hidden sm:inline">&nbsp;URL</span>
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-[15px] sm:h-[15px] shrink-0" />
                     </>
                   )}
                 </button>
